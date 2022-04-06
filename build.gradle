@@ -25,7 +25,7 @@ dependencies {
 
 
 jar {
-  archiveFileName = 'fernflower.jar'
+  archiveFileName = 'perez.jar'
   manifest {
     attributes 'Main-Class': 'org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler'
   }
