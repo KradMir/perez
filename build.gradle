@@ -5,7 +5,6 @@
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/6.8.1/samples
  */
 apply plugin: 'java'
-apply plugin: 'pmd'
 
 compileJava {
   sourceCompatibility '11'
@@ -15,12 +14,6 @@ compileJava {
 sourceSets {
   main.java.srcDirs 'src'
   test.java.srcDirs 'test'
-}
-
-pmd {
-    consoleOutput = true
-    toolVersion = "6.39.0"
-    ignoreFailures = true
 }
 
 repositories { mavenCentral() }
