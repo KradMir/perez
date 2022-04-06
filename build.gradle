@@ -4,3 +4,36 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/6.8.1/samples
  */
+apply plugin: 'java'
+apply plugin: 'pmd'
+
+compileJava {
+  sourceCompatibility '11'
+  targetCompatibility '11'
+}
+
+sourceSets {
+  main.java.srcDirs 'src'
+  test.java.srcDirs 'test'
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "6.39.0"
+    ignoreFailures = true
+}
+
+repositories { mavenCentral() }
+dependencies {
+  implementation 'org.jetbrains:annotations:20.1.0'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'org.assertj:assertj-core:3.12.2'
+}
+
+
+jar {
+  archiveFileName = 'fernflower.jar'
+  manifest {
+    attributes 'Main-Class': 'org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler'
+  }
+}
